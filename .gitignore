@@ -169,6 +169,7 @@ cython_debug/
 
 # exclude vscode files
 .vscode/
+*.code-workspace
 
 # MacOS resources
 # General
