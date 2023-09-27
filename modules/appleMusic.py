@@ -1,0 +1,1 @@
+#example get request: https://api.music.apple.com/v1/catalog/us/charts?types=albums&limit=200
