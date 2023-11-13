@@ -3,15 +3,19 @@
 import requests
 import jwt
 import time
+import configparser
+
+config = config.parser.ConfigParser()
+config.read('config.ini')
 
 # Apple Music API endpoint for fetching charts data
-API_ENDPOINT = "https://api.music.apple.com/v1/catalog/{storefront}/charts"
+API_ENDPOINT = "https://api.music.apple.com/v1/catalog/{STOREFRONT_ID}/charts"
 
 # Your Apple Music developer credentials
-TEAM_ID = "YOUR_TEAM_ID"
-KEY_ID = "YOUR_KEY_ID"
-PRIVATE_KEY_PATH = "path/to/your/private-key.p8"
-STOREFRONT_ID = "us"  # For example, "us" for United States
+TEAM_ID = config.get('Credentials','TEAM_ID')
+KEY_ID = config.get('Credentials','KEY_ID')
+PRIVATE_KEY_PATH = config.get('Credentials','PRIVATE_KEY_PATH')
+STOREFRONT_ID = config.get('Credentials','STOREFRONT_ID')  # For example, "us" for United States
 
 # Generate JWT token for authentication
 def generate_token():
