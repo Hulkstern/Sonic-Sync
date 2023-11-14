@@ -1,0 +1,1 @@
+CONFIG_LOCATION="sonic_sync/resources/config.ini"

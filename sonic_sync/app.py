@@ -13,15 +13,18 @@ import sonic_sync.storages.file as file
 #
 #
 
-def run():
-    setup.init()
-    aMusic.displayData()
-
 def pullData():
     itunes.writeData(itunes.pullData())
     aMusic.writeData(aMusic.pullData())
 
 
+#=================
+#  MAIN METHOD
+#=================
+def run():
+    setup.init()
+    aMusic.displayData()
+    pullData()
 
 
 

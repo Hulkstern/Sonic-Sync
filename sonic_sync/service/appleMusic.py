@@ -1,6 +1,7 @@
 #example get request: https://api.music.apple.com/v1/catalog/us/charts?types=albums&limit=200
 import sonic_sync.storages.file as file
 from datetime import datetime
+from sonic_sync.common.settings import CONFIG_LOCATION
 
 #import requests
 #import jwt
@@ -10,7 +11,7 @@ import applemusicpy
 import json
 
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read(CONFIG_LOCATION)
 
 # Your Apple Music developer credentials
 KEY_ID = config.get('Credentials','KEY_ID')

@@ -1,9 +1,10 @@
 import urllib.request, json 
 import sonic_sync.storages.file as file
 import configparser
+from sonic_sync.common.settings import CONFIG_LOCATION
 
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read(CONFIG_LOCATION)
 
 # Your Apple Music developer credentials
 KEY_ID = config.get('Credentials','KEY_ID')
