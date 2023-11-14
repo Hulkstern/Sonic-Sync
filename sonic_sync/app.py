@@ -13,13 +13,17 @@ import modules.files as files
 #
 #
 
+def run():
+    dirSetup.init()
+    aMusic.displayData()
+
 def pullData():
     itunes.writeData(itunes.pullData())
     aMusic.writeData(aMusic.pullData())
 
-dirSetup.init()
 
-aMusic.displayData()
+
+
 
 #aMusic.main()
 
