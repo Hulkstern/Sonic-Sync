@@ -27,7 +27,7 @@ def pullData(count: int = 200):
 def pullAlbumData(albumID):
     return am.album(albumID,storefront=STOREFRONT_ID)
 
-def parseData(data=self.pullData(),skipPartialsAndSingles: bool = True):
+def parseData(data=pullData(),skipPartialsAndSingles: bool = True):
     #results = am.charts(storefront=STOREFRONT_ID,types=["albums"],chart="most-played",limit="200")
     #print(json.dumps(results,indent=4))
     output = []
@@ -49,10 +49,10 @@ def parseData(data=self.pullData(),skipPartialsAndSingles: bool = True):
             print("[WARN] Something unexpected happened while parsing data")
     return output
 
-def displayData(data=self.parseData()):
-    for index, entry in enumerate(data):
+def displayData(data=parseData()):
+    for index, cleanedData in enumerate(data):
         print("==================")
-        print(f"True Chart Position: \"{cleanedData}\"")
+        print(f"True Chart Position: \"{cleanedData['chartPos']}\"")
         print(f"Name: \"{cleanedData['name']}\"")
         print(f"Artist: \"{cleanedData['artistName']}\"")
         print(f"Track(s): \"{cleanedData['trackCount']}\"")
@@ -64,7 +64,7 @@ def displayData(data=self.parseData()):
         print(f"Rating: \"{cleanedData['contentRating']}\"")
         print()
 
-def writeData(data=self.pullData()):
+def writeData(data=pullData()):
     files.saveDatedFile(data,'appleMusicAlbums','json')
     return
 
