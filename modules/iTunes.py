@@ -10,10 +10,10 @@ from datetime import datetime
 
 #data object, should include a timestamp when data is stored with pull data
 
-def pullData():
+def pullData(count: int = 200):
     # Pull Data from remote source & store in local object
     # Check current data object before pulling data and do not pull if data has been pulled within the last 6 hours
-    with urllib.request.urlopen("https://itunes.apple.com/us/rss/topalbums/limit=200/json") as url:
+    with urllib.request.urlopen(f"https://itunes.apple.com/us/rss/topalbums/limit={count}/json") as url:
         data = json.load(url)
     return data
 
@@ -117,7 +117,7 @@ def pullData():
                 }
             }, """
 
-def returnData(date=datetime.now().strftime('%y%m%d'),name='itunes'):
+""" def returnData(date=datetime.now().strftime('%y%m%d'),name='itunes'):
     if date == '':
         print("return all data given matchin file name not date")
     else:
@@ -127,7 +127,7 @@ def returnData(date=datetime.now().strftime('%y%m%d'),name='itunes'):
     for items in files.listDataFiles(['%s-itunes'%(date)]):
         print(items)
         
-    return
+    return """
 
 def writeData(data):
     # Write current data object to file in standard format

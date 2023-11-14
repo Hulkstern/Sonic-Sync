@@ -19,7 +19,7 @@ def pullData():
 
 dirSetup.init()
 
-aMusic.parseData(aMusic.pullData())
+aMusic.displayData()
 
 #aMusic.main()
 
