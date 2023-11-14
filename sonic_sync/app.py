@@ -14,7 +14,7 @@ import sonic_sync.storages.file as file
 #
 
 def run():
-    dirSetup.init()
+    setup.init()
     aMusic.displayData()
 
 def pullData():

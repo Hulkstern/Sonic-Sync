@@ -1,7 +1,7 @@
 import os
 
 def init():
-    if not os.path.exists("sonic_sync/data"):
+    if not os.path.exists("data"):
         print("servers directory does not exist, creating...")
         os.mkdir("./data")
         print(str("./data")+" directory created")
