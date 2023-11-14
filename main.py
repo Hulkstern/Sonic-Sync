@@ -1,5 +1,5 @@
 import os, json
-import modules.setup as setup
+import modules.dirSetup as dirSetup
 import modules.iTunes as itunes
 import modules.appleMusic as aMusic
 import modules.spotify as spotify
@@ -12,14 +12,22 @@ import modules.files as files
 #
 #
 #
- 
-setup.init()
+
+def pullData():
+    itunes.writeData(itunes.pullData())
+    aMusic.writeData(aMusic.pullData())
+
+dirSetup.init()
+
+aMusic.parseData(aMusic.pullData())
+
+#aMusic.main()
 
 #print(json.dumps(itunes.pullData(),indent=4))
 
-print(files.listDataFiles(['itunes']))
+#print(files.listDataFiles(['itunes']))
 
-itunes.writeData(itunes.pullData())
+
 #files.saveDatedFile(testing.pullData(),"itunesAlbums","json")
 
 #files.saveFile("itunesAlbums","json")
