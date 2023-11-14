@@ -1,5 +1,5 @@
 #example get request: https://api.music.apple.com/v1/catalog/us/charts?types=albums&limit=200
-import modules.files as files
+import sonic_sync.storages.file as file
 from datetime import datetime
 
 #import requests
@@ -65,7 +65,7 @@ def displayData(data=parseData()):
         print()
 
 def writeData(data=pullData()):
-    files.saveDatedFile(data,'appleMusicAlbums','json')
+    file.saveDatedFile(data,'appleMusicAlbums','json')
     return
 
 """

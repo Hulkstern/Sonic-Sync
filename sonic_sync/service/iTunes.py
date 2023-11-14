@@ -1,6 +1,6 @@
 import os, json
 import urllib.request
-import modules.files as files
+import sonic_sync.storages.file as file
 from datetime import datetime
 
 # Raw data pulled from source should be stored in each python module until called for by main.py.
@@ -124,12 +124,12 @@ def pullData(count: int = 200):
 
     allData = []
     # Return data in standard format
-    for items in files.listDataFiles(['%s-itunes'%(date)]):
+    for items in file.listDataFiles(['%s-itunes'%(date)]):
         print(items)
         
     return """
 
 def writeData(data):
     # Write current data object to file in standard format
-    files.saveDatedFile(data,'itunesAlbums','json')
+    file.saveDatedFile(data,'itunesAlbums','json')
     return

@@ -1,5 +1,5 @@
 import urllib.request, json 
-import modules.files as files
+import sonic_sync.storages.file as file
 import configparser
 
 config = configparser.ConfigParser()

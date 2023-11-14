@@ -1,10 +1,10 @@
 import os, json
-import modules.dirSetup as dirSetup
-import modules.iTunes as itunes
-import modules.appleMusic as aMusic
-import modules.spotify as spotify
-import modules.testing as testing
-import modules.files as files
+import sonic_sync.common.setup as setup
+import sonic_sync.common.testing as testing
+import sonic_sync.service.iTunes as itunes
+import sonic_sync.service.appleMusic as aMusic
+import sonic_sync.service.spotify as spotify
+import sonic_sync.storages.file as file
 
 # STANDARD DATA MODEL
 # 
